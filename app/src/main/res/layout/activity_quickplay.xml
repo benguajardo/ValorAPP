@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuickplayActivity"
+    android:background="@drawable/bg_quickplay">
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blackTransparent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_margin="25dp"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:text="Partida rápida"
+            android:fontFamily="@font/valorantfont"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_margin="25dp"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:text="Tu equipo:"
+            android:fontFamily="@font/valorantfont"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_di_gekko"
+                android:background="@color/player_team"
+                android:layout_margin="7dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_di_chamber"
+                android:background="@color/player_team"
+                android:layout_margin="7dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_di_raze"
+                android:background="@color/player_team"
+                android:layout_margin="7dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_di_sova"
+                android:background="@color/player_team"
+                android:layout_margin="7dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_di_omen"
+                android:background="@color/player_team"
+                android:layout_margin="7dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp">
+            <Button
+                android:id="@+id/btnViewMatchFound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Buscar partida"
+            android:fontFamily="@font/valorantfont"></Button>
+            <Button
+                android:id="@+id/btnViewChangeTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cambiar equipo"
+                android:fontFamily="@font/valorantfont"></Button>
+            <Button
+                android:id="@+id/btnViewHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Menú Principal"
+                android:fontFamily="@font/valorantfont"></Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

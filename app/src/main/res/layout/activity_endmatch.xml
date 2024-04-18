@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EndmatchActivity"
+    android:background="@drawable/bg_ascent_tall">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:background="@color/blackTransparent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:text="Partida rápida"
+            android:fontFamily="@font/valorantfont"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASCENT"
+            android:layout_marginBottom="25dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="@color/whiteTransparent"
+            android:fontFamily="@font/valorantfont"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_valorant_victory"/>
+        <Button
+            android:id="@+id/btnViewHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volver al menú principal"
+            android:fontFamily="@font/valorantfont"/>
+    </LinearLayout>
+
+</LinearLayout>
