@@ -8,11 +8,12 @@
     android:background="@drawable/bg_jett"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/text_dashboard"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,26 +43,26 @@
             android:textAlignment="center"
             android:textColorHighlight="@color/black"
             android:textSize="25dp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold"/>
 
         <EditText
-            android:id="@+id/editText1"
+            android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:textSize="20dp"
             android:hint="Nombre de usuario"
-            android:inputType="text" />
+            android:inputType="text"/>
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:textSize="20dp"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -73,20 +74,19 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_google" />
+                android:src="@drawable/ic_google"/>
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_facebook" />
+                android:src="@drawable/ic_facebook"/>
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="20dp"
-                android:src="@drawable/ic_github" />
-
+                android:src="@drawable/ic_github"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +95,6 @@
             android:gravity="center|bottom"
             android:orientation="horizontal"
             android:layout_marginBottom="20dp">
-
 
             <Button
                 android:id="@+id/btnViewHome"
@@ -107,20 +106,6 @@
                 android:padding="5dp"
                 android:textColor="@color/white"
                 android:background="@color/purple_500"/>
-
-            <Button
-                android:id="@+id/btnViewRegister"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Registrarme"
-                android:textSize="20dp"
-                android:padding="5dp"
-                android:textColor="@color/white"
-                android:background="@color/purple_500"
-                />
-
-
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
