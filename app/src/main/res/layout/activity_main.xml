@@ -106,6 +106,18 @@
                 android:padding="5dp"
                 android:textColor="@color/white"
                 android:background="@color/purple_500"/>
+            <Button
+                android:id="@+id/btnViewRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Registrarme"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:textColor="@color/white"
+                android:background="@color/purple_500"/>
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="textHome" type="id">Home</item>
-    <item name="btnViewUsers" type="id">viewUsers</item>
-</resources>
