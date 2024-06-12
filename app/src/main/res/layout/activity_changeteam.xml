@@ -76,7 +76,7 @@
                 android:id="@+id/acceptButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Guardar equipo" />
+                android:text="Buscar partida" />
             <Button
                 android:id="@+id/resetButton"
                 android:layout_width="match_parent"

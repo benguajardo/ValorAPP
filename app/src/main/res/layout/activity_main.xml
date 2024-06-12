@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:textSize="20dp"
-            android:hint="Nombre de usuario"
+            android:hint="Correo electrónico"
             android:inputType="text"/>
 
         <EditText

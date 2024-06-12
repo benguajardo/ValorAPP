@@ -57,34 +57,34 @@
                     android:text="Yo"
                     android:fontFamily="casual"/>
                 <ImageView
+                    android:id="@+id/teamImage1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@color/player_team"
-                    android:src="@drawable/ic_di_gekko"
                     android:layout_margin="7dp"
                     />
                 <ImageView
+                    android:id="@+id/teamImage2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_chamber"
                     android:background="@color/player_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/teamImage3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_raze"
                     android:background="@color/player_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/teamImage4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_sova"
                     android:background="@color/player_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/teamImage5"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_omen"
                     android:background="@color/player_team"
                     android:layout_margin="7dp"/>
 
@@ -97,6 +97,7 @@
                 android:gravity="center">
 
                 <ImageView
+                    android:id="@+id/Team1Win"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@color/player_team20"
@@ -110,8 +111,10 @@
                     android:gravity="center"
                     android:fontFamily="@font/valorantfont"/>
                 <ImageView
+                    android:id="@+id/Team2Win"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:src="@drawable/ic_valorant_logo_white"
                     android:background="@color/enemy_team20"/>
             </LinearLayout>
 

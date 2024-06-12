@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
@@ -74,10 +75,15 @@ class ChangeteamActivity : AppCompatActivity() {
         }
 
         acceptButton.setOnClickListener {
-            val intent = Intent(this, MatchfoundActivity::class.java).apply {
-                putStringArrayListExtra("teamImages", ArrayList(team.map { it.displayIcon }))
+            if (team.size == 5) {
+                val intent = Intent(this, MatchfoundActivity::class.java).apply {
+                    putStringArrayListExtra("teamImages", ArrayList(team.map { it.displayIcon }))
+                }
+                startActivity(intent)
+            } else {
+                // Si no se han seleccionado exactamente 5 imágenes, mostrar un mensaje o realizar alguna acción adecuada.
+                Toast.makeText(this, "Debe seleccionar 5 agentes para jugar", Toast.LENGTH_SHORT).show()
             }
-            startActivity(intent)
         }
 
         val retrofit = Retrofit.Builder()

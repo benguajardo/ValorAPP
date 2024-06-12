@@ -36,9 +36,9 @@
             android:fontFamily="@font/valorantfont"
             />
         <ImageView
+            android:id="@+id/winningTeamImageView"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:src="@drawable/ic_valorant_victory"/>
+            android:layout_height="300dp"/>
         <Button
             android:id="@+id/btnViewHome"
             android:layout_width="match_parent"

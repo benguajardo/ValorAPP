@@ -17,14 +17,13 @@
         android:background="@color/blackTransparent"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/textHome"
+            android:id="@+id/textWelcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:layout_margin="25dp"
             android:textSize="25dp"
             android:textAlignment="center"
-            android:text="Bienvenido Benjamín"
             android:fontFamily="@font/valorantfont"/>
 
         <LinearLayout
@@ -45,12 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Mi Perfil"
                 android:fontFamily="@font/valorantfont"></Button>
-            <Button
-                android:id="@+id/btnViewUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Usuarios"
-                android:fontFamily="@font/valorantfont"/>
+
 
         </LinearLayout>
 

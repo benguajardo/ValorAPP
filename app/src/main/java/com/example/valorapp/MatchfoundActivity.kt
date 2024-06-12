@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -30,9 +31,9 @@ class MatchfoundActivity : AppCompatActivity() {
         if (teamImages != null) {
             for (i in teamImages.indices) {
                 loadImage(teamImages[i], imageViewList[i])
+
             }
         }
-
         viewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
         viewModel.items.observe(this, Observer { item ->
 
@@ -64,6 +65,12 @@ class MatchfoundActivity : AppCompatActivity() {
                     putExtra("agent3", item.agent3)
                     putExtra("agent4", item.agent4)
                     putExtra("agent5", item.agent5)
+
+                    putExtra("teamImage1", teamImages?.get(0))
+                    putExtra("teamImage2", teamImages?.get(1))
+                    putExtra("teamImage3", teamImages?.get(2))
+                    putExtra("teamImage4", teamImages?.get(3))
+                    putExtra("teamImage5", teamImages?.get(4))
                 }
                 startActivity(intent)
                 finish()
