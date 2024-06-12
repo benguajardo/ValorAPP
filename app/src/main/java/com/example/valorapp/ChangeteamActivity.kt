@@ -2,9 +2,13 @@ package com.example.valorapp
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -13,15 +17,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 class ChangeteamActivity : AppCompatActivity() {
-
-    private lateinit var imageViewList: List<ImageView>
-    private val team: MutableList<String> = mutableListOf()
+    private lateinit var generalImageViewList: List<ImageView>
+    private lateinit var teamImageViewList: List<ImageView>
+    private lateinit var resetButton: Button
+    private lateinit var acceptButton: Button
+    private val team: MutableList<Agent> = mutableListOf()
+    private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_changeteam)
 
-        imageViewList = listOf(
+        generalImageViewList = listOf(
             findViewById(R.id.imageView1),
             findViewById(R.id.imageView2),
             findViewById(R.id.imageView3),
@@ -47,6 +55,27 @@ class ChangeteamActivity : AppCompatActivity() {
             findViewById(R.id.imageView23)
         )
 
+        teamImageViewList = listOf(
+            findViewById(R.id.teamImageView1),
+            findViewById(R.id.teamImageView2),
+            findViewById(R.id.teamImageView3),
+            findViewById(R.id.teamImageView4),
+            findViewById(R.id.teamImageView5)
+        )
+
+        resetButton = findViewById(R.id.resetButton)
+        acceptButton = findViewById(R.id.acceptButton)
+
+        resetButton.setOnClickListener {
+            team.clear()
+            updateTeamImages()
+            Log.d("ChangeteamActivity", "Team reseteado")
+        }
+
+        acceptButton.setOnClickListener {
+            Log.d("funca","funca")
+        }
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://valorant-api.com/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -58,30 +87,19 @@ class ChangeteamActivity : AppCompatActivity() {
             override fun onResponse(call: Call<AgentsResponse>, response: Response<AgentsResponse>) {
                 if (response.isSuccessful) {
                     val agents = response.body()?.data
-                    agents?.let { agentList ->
-                        for ((index, agent) in agentList.withIndex()) {
-                            if (index < imageViewList.size) {
-                                loadImage(agent.displayIcon, imageViewList[index])
-
-                                // Agregar el UUID del agente a la lista team
-                                imageViewList[index].setOnClickListener {
-                                    if (team.size < 5) {
-                                        team.add(agent.uuid)
-                                        Log.d("Team", "Agent added to team: ${agent.uuid}")
-                                        Log.d("Team", "Agentes en la lista Team: ${team.joinToString()}")
+                    agents?.let {
+                        for (i in it.indices) {
+                            if (i < generalImageViewList.size) {
+                                val agent = it[i]
+                                loadImage(agent.displayIcon, generalImageViewList[i])
+                                generalImageViewList[i].setOnClickListener {
+                                    if (team.size < 5 && !team.contains(agent)) {
+                                        team.add(agent)
+                                        Log.d("ChangeteamActivity", "Agent added to team: ${agent.uuid}")
+                                        updateTeamImages()
                                     } else {
-                                        Log.d("Team", "Maximum team size reached.")
+                                        Log.d("ChangeteamActivity", "Team is full or agent is already in the team")
                                     }
-                                }
-
-                                // Remover el UUID del agente de la lista team si ya estaba agregado
-                                imageViewList[index].setOnLongClickListener {
-                                    if (team.contains(agent.uuid)) {
-                                        team.remove(agent.uuid)
-                                        Log.d("Team", "Agent removed from team: ${agent.uuid}")
-                                        Log.d("Team", "Agentes en la lista Team: ${team.joinToString()}")
-                                    }
-                                    true
                                 }
                             }
                         }
@@ -90,9 +108,15 @@ class ChangeteamActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<AgentsResponse>, t: Throwable) {
-                Log.e("MainActivity", "Error fetching agents data", t)
+                Log.e("ChangeteamActivity", "Error fetching agents data", t)
             }
         })
+
+        // Initialize Firebase Auth
+        auth = FirebaseAuth.getInstance()
+
+        // Initialize Firebase Database
+        database = FirebaseDatabase.getInstance().reference
     }
 
     private fun loadImage(url: String, imageView: ImageView) {
@@ -100,6 +124,17 @@ class ChangeteamActivity : AppCompatActivity() {
             .load(url)
             .into(imageView)
     }
+
+    private fun updateTeamImages() {
+        for (i in teamImageViewList.indices) {
+            if (i < team.size) {
+                loadImage(team[i].displayIcon, teamImageViewList[i])
+            } else {
+                teamImageViewList[i].setImageDrawable(null)
+            }
+        }
+    }
+
 
     interface ApiService {
         @GET("v1/agents")
@@ -111,7 +146,7 @@ class ChangeteamActivity : AppCompatActivity() {
     )
 
     data class Agent(
-        val uuid: String,
-        val displayIcon: String
+        val displayIcon: String,
+        val uuid: String
     )
 }
