@@ -21,11 +21,6 @@ class HomeActivity : AppCompatActivity() {
 
         // Configura los listeners
         btnViewQuickplay.setOnClickListener {
-            val intent = Intent(this, QuickplayActivity::class.java)
-            startActivity(intent)
-        }
-
-        btnViewChangeTeam.setOnClickListener {
             val intent = Intent(this, ChangeteamActivity::class.java)
             startActivity(intent)
         }

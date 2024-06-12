@@ -47,6 +47,7 @@
             android:layout_height="wrap_content"
             android:gravity="center">
             <ImageView
+                android:id="@+id/teamImageView1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@color/player_team"
@@ -54,24 +55,28 @@
                 android:layout_margin="7dp"
                 />
             <ImageView
+                android:id="@+id/teamImageView2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_di_chamber"
                 android:background="@color/player_team"
                 android:layout_margin="7dp"/>
             <ImageView
+                android:id="@+id/teamImageView3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_di_raze"
                 android:background="@color/player_team"
                 android:layout_margin="7dp"/>
             <ImageView
+                android:id="@+id/teamImageView4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_di_sova"
                 android:background="@color/player_team"
                 android:layout_margin="7dp"/>
             <ImageView
+                android:id="@+id/teamImageView5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_di_omen"

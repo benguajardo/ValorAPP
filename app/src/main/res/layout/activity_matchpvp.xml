@@ -129,33 +129,33 @@
                     android:text="Enemigo"
                     android:fontFamily="casual"/>
                 <ImageView
+                    android:id="@+id/imageView1"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_deadlock"
                     android:background="@color/enemy_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/imageView2"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_reyna"
                     android:background="@color/enemy_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/imageView3"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_fade"
                     android:background="@color/enemy_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/imageView4"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_harbor"
                     android:background="@color/enemy_team"
                     android:layout_margin="7dp"/>
                 <ImageView
+                    android:id="@+id/imageView5"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:src="@drawable/ic_di_kay_o"
                     android:background="@color/enemy_team"
                     android:layout_margin="7dp"/>
 

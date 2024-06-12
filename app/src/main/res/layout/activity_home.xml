@@ -40,12 +40,6 @@
                 android:text="Partida rápida"
                 android:fontFamily="@font/valorantfont"></Button>
             <Button
-                android:id="@+id/btnViewChangeTeam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Mi equipo"
-                android:fontFamily="@font/valorantfont"></Button>
-            <Button
                 android:id="@+id/btnViewProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,5 +1,6 @@
 package com.example.valorapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -73,7 +74,10 @@ class ChangeteamActivity : AppCompatActivity() {
         }
 
         acceptButton.setOnClickListener {
-            Log.d("funca","funca")
+            val intent = Intent(this, MatchfoundActivity::class.java).apply {
+                putStringArrayListExtra("teamImages", ArrayList(team.map { it.displayIcon }))
+            }
+            startActivity(intent)
         }
 
         val retrofit = Retrofit.Builder()
@@ -134,7 +138,6 @@ class ChangeteamActivity : AppCompatActivity() {
             }
         }
     }
-
 
     interface ApiService {
         @GET("v1/agents")
